@@ -3,8 +3,8 @@ const inquirer = require('inquirer');
 const Manager = require('../lib/Manager');
 const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
-
-
+const generatePage = require('../src/page-template.js');
+const {writeFile, copyFile} = require('../utils/generate-site');
 
 // Questions batch for basic Emplyee
 // Prompt emloyee name id and email - Emplyee is input as default argument returns a promise
@@ -170,7 +170,9 @@ const addTeamMember = (members) =>  {
                 });
         } else {
             
-            //Pass result onto page..
+            let html = generatePage(members);
+            console.log(html);
+            writeFile(html)
             return members; 
         }
 
