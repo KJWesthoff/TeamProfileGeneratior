@@ -29,7 +29,7 @@ const employeeQuestons = (employeeType) => {
         name: 'id',
         message: 'Please Enter an emplyee ID',
         validate: nameInput => {
-            if(isNaN(nameInput)){
+            if(isNaN(nameInput) || nameInput === ''){
                 console.log(" // Please enter an ID (must be a number)");
                 return false;
             } else {

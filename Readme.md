@@ -22,7 +22,11 @@
   ## Installation Instructions:
   command line iterface run index.js using node
   ## How To Use
-  Launch, follow prompts, open index.html
+  Launch, follow prompts, open index.js in Node
+
+  ## Here is a screenshot:
+  ![screendump](./img/Screenshot.png)
+
   ## How to Contribute:
   * Please someone tidy up the maze of promises in Index.js
   * Checkout the github repo and please raise any issues with Team Profile Generator you come across 
