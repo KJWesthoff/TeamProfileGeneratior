@@ -20,12 +20,13 @@ const renderTeamMembers = members => {
                     </ul>
                 </div>
             </div>
-        </div>`
+        </div>
+        `
 
         return teamCardHtml;
         
     });
-    return teamMemberHtmlArr.join()
+    return teamMemberHtmlArr.join('');
 }
 
 const generatePage = (members) => {

@@ -29,11 +29,12 @@ const employeeQuestons = (employeeType) => {
         name: 'id',
         message: 'Please Enter an emplyee ID',
         validate: nameInput => {
-            if(nameInput){
-                return true;
-            } else {
-                console.log(" // Please enter an ID (string or number)");
+            if(isNaN(nameInput)){
+                console.log(" // Please enter an ID (must be a number)");
                 return false;
+            } else {
+                
+                return true;
             }
         }
     },
@@ -56,7 +57,7 @@ const employeeQuestons = (employeeType) => {
 
 
 // Prompt for the manager using combined managerEmplyeeitems - returns a promise od a object constinin an manager
-const promptManager = () => {
+const promptTeam = () => {
     empQuestions = employeeQuestons("Manager")
     // Additional questions 
     manQuestions = [
@@ -191,27 +192,22 @@ const addTeamMember = (members) =>  {
 // Run the whole stack of prompting functions..
 function init(){
     
-    promptManager()
+     promptTeam()
     .then(result => {
         let {name,id,email,managerOfficeNumber} = result;
-          
+        
+        // init the tam Array with a manager object
         manager = new Manager(name,id,email,managerOfficeNumber);
-        //console.log(manager); 
         addTeamMember([manager])
     });
-    
-    
- 
 
- 
-    
-    
 };
     
 
 
-init();
+//init();
 
+module.exports = init()
 
 
 

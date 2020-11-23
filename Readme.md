@@ -24,7 +24,7 @@
   ## How To Use
   Launch, follow prompts, open index.html
   ## How to Contribute:
-  * Please someone tidy up the maze of promises in PromptUser.js
+  * Please someone tidy up the maze of promises in Index.js
   * Checkout the github repo and please raise any issues with Team Profile Generator you come across 
   * Even better - help with bugfixes and features by submitting your solutions in pull requrets for the repo
   * Follow the code of coduct for contribution outlined in [Contributor Covenant](https://www.contributor-covenant.org/) 
