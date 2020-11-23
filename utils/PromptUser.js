@@ -4,12 +4,14 @@ const Manager = require('../lib/Manager');
 const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
 const generatePage = require('../src/page-template.js');
-const {writeFile, copyFile} = require('../utils/generate-site');
+const {writeFile, copyFile} = require('./file-ops');
 
 // Questions batch for basic Emplyee
 // Prompt emloyee name id and email - Emplyee is input as default argument returns a promise
-const employeeQuestons = (employeeType) => { return[
+const employeeQuestons = (employeeType) => { 
+    return[
     {
+    
         type: 'input',
         name: 'name',
         message: `Please Enter ${employeeType} Name`,
@@ -170,8 +172,9 @@ const addTeamMember = (members) =>  {
                 });
         } else {
             
+            // make the page and copy to index.html
             let html = generatePage(members);
-            console.log(html);
+        
             writeFile(html)
             return members; 
         }
@@ -193,9 +196,9 @@ function init(){
         let {name,id,email,managerOfficeNumber} = result;
           
         manager = new Manager(name,id,email,managerOfficeNumber);
-        console.log(manager); 
+        //console.log(manager); 
         addTeamMember([manager])
-    })
+    });
     
     
  
